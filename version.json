@@ -1,5 +1,5 @@
 {
-  "version": "4.12.82",
+  "version": "4.12.83",
   "name": "MyBudget Mobile UI Refinement",
-  "whatsNew": "Mobile UI patch: responsive card text and Bills controls, mobile chart scrolling, debt-payment series in annual cash-flow charts, repaired More menu, and reduced accidental double-tap zoom. Laptop UI and financial logic remain unchanged."
+  "whatsNew": "Mobile-only UI refinements: improved card sizing, mobile transaction cards, Bills calendar/list toggle, more usable chart touch interaction, clearly labeled navigation menu, and improved form/modal scrolling and input sizing. Desktop layout and financial logic are preserved."
 }
