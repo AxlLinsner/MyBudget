@@ -349,8 +349,8 @@ body.storage-startup-blocked .app{pointer-events:none;user-select:none}
 /* v4.12.82 mobile-only UI refinement; desktop remains unchanged */
 .billViewToggle{display:none}
 @media(max-width:700px){
-  html,body{touch-action:pan-x pan-y;}
-  button,.btn,select{touch-action:manipulation}
+  html,body{touch-action:manipulation;}
+  button,.btn,select,input,textarea,a{touch-action:manipulation}
   input,textarea,select,.field input,.field select,.field textarea{font-size:16px!important}
   .top{padding-inline:12px;gap:8px}.top:after{display:none!important}
   #menuBtn{font-size:14px!important;min-width:86px;justify-content:center;order:1;margin:0}
@@ -403,6 +403,17 @@ body.storage-startup-blocked .app{pointer-events:none;user-select:none}
   #calendar[hidden],#billMonthList[hidden]{display:none!important}
   .billViewToggle{margin:0 0 10px;display:flex}
   .billViewToggle button{flex:1}
+  #bills .sectionhead{display:grid;grid-template-columns:1fr;align-items:stretch}
+  #bills .sectionhead>.toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;gap:5px;width:100%}
+  #calendarFilter{grid-column:1;min-width:0;width:100%;font-size:14px}
+  #bills .sectionhead>.toolbar button{min-width:0;padding:7px 9px;white-space:nowrap}
+  #calendarTitle{font-size:15px}
+  .metric,.label,.mini,.card p{overflow-wrap:anywhere;word-break:normal}
+  .sectionhead .mini{white-space:normal}
+  .annualChartWrap,.chartWrap,.cashChartWrap,.spendChartWrap{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  .annualChartWrap canvas,.chartWrap canvas{display:block}
+  .annualChartWrap:has(canvas[data-wide-chart]),.chartWrap:has(canvas[data-wide-chart]){scrollbar-width:thin}
+  .chartWrap:has(#debtChart){overflow-y:auto;max-height:430px}
   .billMonthList{display:grid;gap:7px}
   .billMonthList .listrow{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px;align-items:flex-start}
   .billMonthList .billMonthDay{flex:0 0 42px;font-weight:750;color:var(--muted)}
