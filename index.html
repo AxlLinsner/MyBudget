@@ -345,6 +345,86 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-ser
 body.storage-startup-blocked .app{pointer-events:none;user-select:none}
 @media(max-width:520px){.saveStatusPill{font-size:10px;padding:5px 7px}.saveStatusDetails .sectionhead{align-items:flex-start;flex-direction:column;gap:5px}}
 
+
+/* v4.12.82 mobile-only UI refinement; desktop remains unchanged */
+.billViewToggle{display:none}
+@media(max-width:700px){
+  html,body{touch-action:pan-x pan-y;}
+  button,.btn,select{touch-action:manipulation}
+  input,textarea,select,.field input,.field select,.field textarea{font-size:16px!important}
+  .top{padding-inline:12px;gap:8px}.top:after{display:none!important}
+  #menuBtn{font-size:14px!important;min-width:86px;justify-content:center;order:1;margin:0}
+  #menuBtn .menuText{font-size:14px!important;display:inline!important}
+  .top .top-spacer{flex:1}.top .toolbar{order:3;margin:0;width:auto}
+  .top #addBtn{padding:8px 12px;min-height:42px}
+  .content{padding:12px 12px calc(100px + var(--safe-bottom))}
+  .title{font-size:23px;line-height:1.2}.sub{font-size:13px;line-height:1.45}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:13px 0}
+  .cards>.card,.cards>.snapshotMetric{min-width:0;padding:12px}
+  .metric{font-size:clamp(17px,4.8vw,21px);line-height:1.2;overflow-wrap:anywhere}
+  .label{font-size:11px;line-height:1.35}
+  .grid2,.grid3{grid-template-columns:minmax(0,1fr);gap:10px}
+  .card{padding:13px;min-width:0;overflow:hidden}
+  .sectionhead{gap:8px;flex-wrap:wrap;align-items:center}
+  .sectionhead>div{min-width:0;flex:1}
+  .sectionhead h2,.card h2{font-size:16px}
+  .toolbar{flex-wrap:wrap;min-width:0}.toolbar>*{max-width:100%}
+  .tablewrap{overflow:visible}
+  #transactions .table{min-width:0;width:100%;border-collapse:separate;border-spacing:0}
+  #transactions .table thead{display:none}
+  #transactions .table tbody{display:block}
+  #transactions .table tbody .empty{display:block;padding:18px;text-align:center}
+  #transactions .table tbody tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:5px 10px;padding:12px 0;border-bottom:1px solid var(--line)}
+  #transactions .table tbody tr td{border:0;padding:0;font-size:12px;min-width:0;overflow-wrap:anywhere}
+  #transactions .table tbody tr td:nth-child(1){grid-column:1/-1;color:var(--muted);font-size:11px}
+  #transactions .table tbody tr td:nth-child(2){grid-column:1;grid-row:2}
+  #transactions .table tbody tr td:nth-child(3){grid-column:2;grid-row:2;justify-self:end}
+  #transactions .table tbody tr td:nth-child(4){grid-column:1;grid-row:3;color:var(--muted)}
+  #transactions .table tbody tr td:nth-child(5){grid-column:2;grid-row:3;justify-self:end;color:var(--muted)}
+  #transactions .table tbody tr td:nth-child(6){grid-column:1;grid-row:4;font-weight:800;font-size:14px}
+  #transactions .table tbody tr td:nth-child(7){grid-column:1/-1;grid-row:5}
+  #transactions .table tbody tr td:nth-child(8){grid-column:1/-1;grid-row:6}
+  #transactions .billRowActions{display:flex;flex-wrap:wrap;gap:6px}
+  #transactions .billRowActions .btn{min-height:36px;padding:6px 9px}
+  #transactions .card .toolbar input{flex:1 1 100%;width:100%}
+  #transactions #txFilter{flex:1 1 100%;width:100%}
+  .chart,.chartWrap canvas,.annualChartWrap canvas{height:260px!important;min-height:260px;touch-action:pan-y}
+  .cashChartWrap,.spendChartWrap,.chartWrap,.annualChartWrap{min-height:270px;overflow:visible}
+  .chartTip{max-width:min(240px,calc(100vw - 44px));font-size:13px;box-shadow:0 5px 20px rgba(0,0,0,.15)}
+  .annualToolbar{top:calc(58px + env(safe-area-inset-top));padding:9px}
+  .annualToolbar select{min-width:0}
+  .table{min-width:0}
+  .table th,.table td{padding:8px 6px;font-size:12px}
+  .billCalendar .calendarHead{display:none}
+  .billCalendar .calendarGrid{grid-template-columns:repeat(7,minmax(0,1fr))}
+  .billCalendar .day{min-height:68px;padding:4px 3px;overflow:hidden}
+  .billCalendar .daynum{font-size:11px}
+  .billCalendar .billEvent{font-size:9px;line-height:1.2;padding:3px;white-space:normal;display:block;max-height:30px;overflow:hidden}
+  #calendar[hidden],#billMonthList[hidden]{display:none!important}
+  .billViewToggle{margin:0 0 10px;display:flex}
+  .billViewToggle button{flex:1}
+  .billMonthList{display:grid;gap:7px}
+  .billMonthList .listrow{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px;align-items:flex-start}
+  .billMonthList .billMonthDay{flex:0 0 42px;font-weight:750;color:var(--muted)}
+  .billMonthList .billMonthItems{flex:1;min-width:0;display:grid;gap:6px}
+  .billMonthList .billMonthItem{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:8px;border-radius:8px;background:var(--surface-2);font-size:12px}
+  .billMonthList .billMonthItem button{min-width:0;text-align:left;border:0;background:transparent;padding:0;color:inherit}
+  .mobileMorePanel{bottom:calc(76px + var(--safe-bottom));left:10px;right:10px;width:auto;max-height:65dvh;overflow:auto;padding:10px}
+  .mobileMorePanel button{font-size:14px;min-height:44px}
+  .side.mobile-open{position:fixed;inset:0 auto 0 0;height:100dvh;overflow:auto;padding-top:calc(18px + env(safe-area-inset-top));}
+  .modalback{align-items:flex-end;padding:0}
+  .modal{max-height:calc(100dvh - env(safe-area-inset-top));height:auto;overflow:auto;overscroll-behavior:contain;padding:12px 14px calc(18px + var(--safe-bottom));border-radius:18px 18px 0 0}
+  .modalhead{position:sticky;top:0;padding:7px 0 10px;margin-bottom:10px;z-index:3}
+  #modalForm{padding-bottom:8px}
+  #modalForm .formgrid{gap:12px}
+  #modalForm .field label{font-size:12px;margin-bottom:5px}
+  #modalForm .field input,#modalForm .field select,#modalForm .field textarea{min-height:48px;padding:11px}
+  #modalForm .field textarea{min-height:90px}
+  #modalForm button[type=submit]{width:100%;min-height:48px}
+  .mobileNav{grid-template-columns:repeat(5,minmax(0,1fr));padding-top:6px}
+  .mobileNav button{min-height:48px;font-size:10px}
+  .quickAdd{width:52px;height:52px;right:14px;bottom:calc(80px + var(--safe-bottom))}
+}
 </style>
 </head>
 <body>
@@ -354,7 +434,7 @@ body.storage-startup-blocked .app{pointer-events:none;user-select:none}
 <div style="height:8px"></div><button data-page="annual"><span class="navIcon" data-icon="report" data-icon-slot="annual"></span>Annual Dashboard</button><button data-page="budgets"><span class="navIcon" data-icon="plan" data-icon-slot="budgets"></span>Budgets</button><button data-page="debts"><span class="navIcon" data-icon="activity" data-icon-slot="debts"></span>Debt Payoff</button><button data-page="goals"><span class="navIcon" data-icon="home" data-icon-slot="goals"></span>Savings Goals</button><button data-page="data"><span class="navIcon" data-icon="settings" data-icon-slot="data"></span>Settings</button>
 </nav></aside>
 <main class="main">
-<header class="top"><button class="btn menuTop iconButton" id="menuBtn"><span class="menuIcon"></span><span class="menuText">Menu</span></button><div class="top-spacer"></div><span class="pill saveStatusPill" id="saveStatusPill" data-state="pending">Not saved yet</span><span class="pill" id="monthPill"></span><div class="toolbar"><button class="btn primary iconButton" id="addBtn"><span>＋</span><span>Add</span></button></div></header>
+<header class="top"><button class="btn menuTop iconButton" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false"><span class="menuIcon"></span><span class="menuText">Menu</span></button><div class="top-spacer"></div><span class="pill saveStatusPill" id="saveStatusPill" data-state="pending">Not saved yet</span><span class="pill" id="monthPill"></span><div class="toolbar"><button class="btn primary iconButton" id="addBtn"><span>＋</span><span>Add</span></button></div></header>
 <div class="content">
 
 <section id="dashboard" class="page"><h1 class="title">Dashboard</h1><div class="sub">Your financial picture for the current month.</div><div id="dashCards" class="cards"></div>
@@ -394,7 +474,7 @@ body.storage-startup-blocked .app{pointer-events:none;user-select:none}
 
 <section id="bills" class="page"><div class="sectionhead"><div><h1 class="title">Bills &amp; Financial Calendar</h1><div class="sub">Plan obligations, track payments, and view planned income and actual expenses without double-counting.</div></div><button class="btn primary" onclick="openModal('bill')">+ Add Bill</button></div>
 <div id="billSummaryCards" class="cards"></div>
-<div class="card section"><div class="sectionhead"><div><h2 id="calendarTitle">Calendar</h2><div class="mini">Bill occurrences and their payment status.</div></div><div class="toolbar"><select id="calendarFilter" class="btn" aria-label="Calendar filter"><option value="all">All</option><option value="income">Income</option><option value="bill">Bills</option><option value="expense">Expenses</option><option value="savings">Savings</option><option value="investment">Investments</option></select><button class="btn small" onclick="changeBillMonth(-1)">‹</button><button class="btn small" onclick="goBillToday()">Today</button><button class="btn small" onclick="changeBillMonth(1)">›</button></div></div><div id="calendar" class="calendar billCalendar"></div></div>
+<div class="card section"><div class="sectionhead"><div><h2 id="calendarTitle">Calendar</h2><div class="mini">Bill occurrences and their payment status.</div></div><div class="toolbar"><select id="calendarFilter" class="btn" aria-label="Calendar filter"><option value="all">All</option><option value="income">Income</option><option value="bill">Bills</option><option value="expense">Expenses</option><option value="savings">Savings</option><option value="investment">Investments</option></select><button class="btn small" onclick="changeBillMonth(-1)">‹</button><button class="btn small" onclick="goBillToday()">Today</button><button class="btn small" onclick="changeBillMonth(1)">›</button></div></div><div class="billViewToggle toolbar"><button type="button" class="btn small active" id="billCalendarViewBtn">Calendar</button><button type="button" class="btn small" id="billListViewBtn">List</button></div><div id="calendar" class="calendar billCalendar"></div><div id="billMonthList" class="billMonthList" hidden></div></div>
 <div id="overdueBillsSection" class="card section"></div>
 <div class="grid2 section"><div class="card"><div class="sectionhead"><h2>Upcoming Bills</h2><span class="mini">Next 10 unpaid occurrences</span></div><div id="upcomingBills"></div></div><div class="card"><div class="sectionhead"><h2>Active Bills</h2><span class="mini">Current bill definitions</span></div><div id="activeBills"></div></div></div>
 <div id="billDetailsPanel" class="card section" style="display:none"></div></section>

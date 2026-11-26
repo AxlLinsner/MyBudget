@@ -1,5 +1,5 @@
 {
-  "version": "4.12.81",
-  "name": "MyBudget Local Storage & Save Reliability",
-  "whatsNew": "Added local storage usage monitoring, verified database writes, visible save status, failed-save warnings and retry. Preserved the localStorage database architecture, financial records, calculations, and encrypted backup/restore format."
+  "version": "4.12.82",
+  "name": "MyBudget Mobile UI Refinement",
+  "whatsNew": "Mobile-only UI refinements: improved card sizing, mobile transaction cards, Bills calendar/list toggle, more usable chart touch interaction, clearly labeled navigation menu, and improved form/modal scrolling and input sizing. Desktop layout and financial logic are preserved."
 }
