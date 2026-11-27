@@ -2,7 +2,7 @@
 const KEY='pbos_v3';
 const LEGACY_KEY='pbos_iphone_v1';
 const V2_KEY='pbos_v2';
-const APP_VERSION='4.12.84';
+const APP_VERSION='5.00';
 const DB_SCHEMA_VERSION=1;
 const BACKUP_FORMAT_VERSION=1;
 const BACKUP_ITERATIONS=310000;

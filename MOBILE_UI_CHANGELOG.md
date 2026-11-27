@@ -44,3 +44,9 @@
 - Reduced chart tooltip close control visual size so it obscures less of the figures while remaining tappable.
 - Annual Dashboard Planned Bills and Actual Bills paid descriptions now wrap into readable lines on narrow screens.
 - No financial logic, data structure, or desktop styling changes.
+
+
+## v5.00 — Stable mobile release
+- Consolidated the completed mobile UI refinements into a simplified release version label.
+- Installed version, version.json, and service-worker cache are aligned at 5.00.
+- Version label change only; app data and database schema are unchanged.
