@@ -635,31 +635,21 @@ const PIE_CHART_COLORS=['#3979C6','#E58B43','#42A58A','#9B79C9','#D65F75','#D5AE
 function chartTheme(c){const st=getComputedStyle(c);return {text:st.getPropertyValue('--text').trim()||'#101828',muted:st.getPropertyValue('--muted').trim()||'#667085',grid:st.getPropertyValue('--line').trim()||'#e4e7ec',surface:st.getPropertyValue('--panel').trim()||'#fff'};}
 function setChartLegend(id,items){let root=$(id);if(!root)return;root.innerHTML=items.map(item=>`<span class="annualLegendItem"><i style="background:${item.color}"></i>${esc(item.label)}</span>`).join('');}
 function chartTipEvents(c,tip,handler){
-  c.onmousemove=e=>handler(e,false);
-  c.onclick=e=>{
-    if(c._touchHandled){c._touchHandled=false;return;}
+  const hideTip=()=>{if(tip){tip.style.display='none';tip._selected=false;tip._selectedIndex=undefined;}};
+  const addClose=()=>{if(!tip||!tip.firstElementChild||tip.firstElementChild.dataset.tipClose)return;const close=document.createElement('button');close.type='button';close.className='chartTipClose';close.setAttribute('aria-label','Close chart details');close.textContent='×';close.dataset.tipClose='1';tip.insertBefore(close,tip.firstChild);close.onclick=e=>{e.preventDefault();e.stopPropagation();hideTip();};};
+  c.onmousemove=e=>{if(tip?._selected)return;handler(e,false);addClose();};
+  c.onpointerup=e=>{
+    if(e.pointerType==='mouse'&&e.button!==0)return;
     const previouslySelected=tip?._selected?tip._selectedIndex:undefined;
-    handler(e,true);
+    handler(e,true);addClose();
     const newlySelected=tip?._selectedIndex;
-    if(tip&&previouslySelected!==undefined&&previouslySelected===newlySelected){
-      tip.style.display='none';tip._selected=false;tip._selectedIndex=undefined;
-    }
+    if(tip&&previouslySelected!==undefined&&previouslySelected===newlySelected)hideTip();
   };
-  c.onpointerdown=e=>{if(e.pointerType==='touch')c._touchSelect=true};
-  c.onmouseleave=e=>{
-    const next=e.relatedTarget;
-    if(tip&&(next===tip||tip.contains(next)))return;
-    if(tip&&!tip._selected)tip.style.display='none';
-  };
-  if(tip){
-    tip.onmouseenter=()=>{};
-    tip.onmouseleave=e=>{
-      if(e.relatedTarget===c)return;
-      if(!tip._selected)tip.style.display='none';
-    };
-  }
-  c.ontouchend=e=>{const t=e.changedTouches?.[0];if(!t)return;c._touchHandled=true;const previouslySelected=tip?._selected?tip._selectedIndex:undefined;handler({clientX:t.clientX,clientY:t.clientY},true);const newlySelected=tip?._selectedIndex;if(tip&&previouslySelected!==undefined&&previouslySelected===newlySelected){tip.style.display='none';tip._selected=false;tip._selectedIndex=undefined;}};
+  c.onclick=null;c.ontouchend=null;c.onpointerdown=null;
+  c.onmouseleave=e=>{const next=e.relatedTarget;if(tip&&(next===tip||tip.contains(next)))return;if(tip&&!tip._selected)tip.style.display='none';};
+  if(tip){tip.onmouseenter=()=>{};tip.onmouseleave=e=>{if(e.relatedTarget===c)return;if(!tip._selected)tip.style.display='none';};tip.onclick=e=>{if(e.target===tip){hideTip();}};}
 }
+
 const MOBILE_MONTH_CHARTS=new Set(['dashCash','incomeOutChart','projectionChart','annualQuarterChart','annualMonthlyChart']);
 const MOBILE_SCROLL_CHARTS=new Set(['debtChart']);
 const MONTH_NAMES=['January','February','March','April','May','June','July','August','September','October','November','December'];

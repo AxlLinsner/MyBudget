@@ -1,5 +1,5 @@
 {
-  "version": "4.12.85",
+  "version": "4.12.86",
   "name": "MyBudget Mobile UI Polish",
-  "whatsNew": "Mobile presentation fixes: card headings wrap cleanly, forecast selector fits, debt accounts table scrolls horizontally, and chart data tooltips toggle off on a second tap."
+  "whatsNew": "Mobile touch refinement: prevent accidental double-tap zoom while preserving pinch zoom; chart details toggle reliably with a tap and include a clear close control."
 }

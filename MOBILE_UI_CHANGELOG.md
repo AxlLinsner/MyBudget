@@ -31,3 +31,10 @@
 - Cash-flow forecast period selector is constrained and its description wraps.
 - Debt accounts table has a dedicated horizontal scroll area on mobile.
 - Chart detail tooltip selection now toggles off when tapping the same data point again.
+
+
+## v4.12.86 — Touch & chart interaction refinement
+- Mobile double-tap zoom suppressed via `touch-action: manipulation` (pinch zoom remains supported).
+- Chart selection moved to pointer events to reduce touch/click event conflicts.
+- Re-tapping the same chart selection dismisses it; chart tooltip includes a dedicated close button.
+- Desktop styling and financial logic unchanged.

@@ -319,7 +319,8 @@ body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-ser
 @media(max-width:520px){.card-style-grid{grid-template-columns:1fr}}
 
 /* Chart refresh: semantic financial colors, readable legends and responsive bars */
-.annualLegend{align-items:center}.annualLegendItem{line-height:1.45}.chartWrap{position:relative;min-width:0}.chart{overflow:visible;touch-action:pan-y}.annualChartWrap .chart{height:auto}.cashChartWrap .chart{height:245px}.spendChartWrap .chart{height:245px}.chartTip{max-height:190px;overflow:auto}.chartLegend{display:flex;flex-wrap:wrap;gap:8px 14px}
+.annualLegend{align-items:center}.annualLegendItem{line-height:1.45}.chartWrap{position:relative;min-width:0}.chart{overflow:visible;touch-action:pan-y}.annualChartWrap .chart{height:auto}.cashChartWrap .chart{height:245px}.spendChartWrap .chart{height:245px}.chartTip{max-height:190px;overflow:auto}.chartTipClose{position:sticky;top:0;float:right;margin:-2px -2px 4px 8px;border:0;border-radius:50%;width:30px;height:30px;background:var(--surface-2);color:var(--text);font-size:22px;line-height:24px;display:flex;align-items:center;justify-content:center;touch-action:manipulation}
+.chartLegend{display:flex;flex-wrap:wrap;gap:8px 14px}
 @media(max-width:700px){.annualLegendItem{font-size:10px}.chartTip{max-width:min(230px,calc(100vw - 55px))}}
 
 
@@ -349,7 +350,7 @@ body.storage-startup-blocked .app{pointer-events:none;user-select:none}
 /* v4.12.84 mobile-only regression fixes; desktop remains unchanged */
 .billViewToggle{display:none}
 @media(max-width:700px){
-  html,body{touch-action:pan-x pan-y;}
+  html,body{touch-action:manipulation;}
   button,.btn,select{touch-action:manipulation}
   input,textarea,select,.field input,.field select,.field textarea{font-size:16px!important}
   .top{padding-inline:12px;gap:8px}.top:after{display:none!important}
@@ -388,7 +389,7 @@ body.storage-startup-blocked .app{pointer-events:none;user-select:none}
   #transactions .billRowActions .btn{min-height:36px;padding:6px 9px}
   #transactions .card .toolbar input{flex:1 1 100%;width:100%}
   #transactions #txFilter{flex:1 1 100%;width:100%}
-  .chart,.chartWrap canvas,.annualChartWrap canvas{height:260px!important;min-height:260px;touch-action:pan-y}
+  .chart,.chartWrap canvas,.annualChartWrap canvas{height:260px!important;min-height:260px;touch-action:manipulation}
   .cashChartWrap,.spendChartWrap,.chartWrap,.annualChartWrap{min-height:270px;overflow:visible}
   .chartTip{max-width:min(240px,calc(100vw - 44px));font-size:13px;box-shadow:0 5px 20px rgba(0,0,0,.15)}
   .annualToolbar{top:calc(58px + env(safe-area-inset-top));padding:9px}
