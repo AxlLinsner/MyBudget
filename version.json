@@ -1,5 +1,5 @@
 {
-  "version": "4.12.84",
-  "name": "MyBudget Mobile Chart & Touch Fixes",
-  "whatsNew": "Mobile bug fixes: multi-month selectors remain available while filtering; selector alignment and touch targets improved; scrollable forecast/annual tables and debt chart; More button click reliability; mobile calendar layout and text fit. Desktop layout and financial calculations are unchanged."
+  "version": "4.12.85",
+  "name": "MyBudget Mobile UI Polish",
+  "whatsNew": "Mobile presentation fixes: card headings wrap cleanly, forecast selector fits, debt accounts table scrolls horizontally, and chart data tooltips toggle off on a second tap."
 }

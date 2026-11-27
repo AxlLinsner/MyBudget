@@ -24,3 +24,10 @@
 - Restored visible weekday headers and tightened mobile calendar navigation layout.
 - Enabled horizontal scrolling for Cash-flow Forecast, Annual Quarterly Cash Flow, and Monthly Annual Summary tables; corrected Debt Accounts chart vertical scroll.
 - Improved mobile card/header wrapping and table scrolling. No financial calculations or data structures changed.
+
+
+## v4.12.85 — Mobile presentation polish
+- Mobile chart card headings and descriptions wrap without being hidden behind the month selector.
+- Cash-flow forecast period selector is constrained and its description wraps.
+- Debt accounts table has a dedicated horizontal scroll area on mobile.
+- Chart detail tooltip selection now toggles off when tapping the same data point again.
