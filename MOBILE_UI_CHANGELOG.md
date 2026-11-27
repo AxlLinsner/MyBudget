@@ -38,3 +38,9 @@
 - Chart selection moved to pointer events to reduce touch/click event conflicts.
 - Re-tapping the same chart selection dismisses it; chart tooltip includes a dedicated close button.
 - Desktop styling and financial logic unchanged.
+
+
+## v4.12.87 — Mobile finishing polish
+- Reduced chart tooltip close control visual size so it obscures less of the figures while remaining tappable.
+- Annual Dashboard Planned Bills and Actual Bills paid descriptions now wrap into readable lines on narrow screens.
+- No financial logic, data structure, or desktop styling changes.

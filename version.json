@@ -1,5 +1,5 @@
 {
-  "version": "4.12.86",
+  "version": "4.12.87",
   "name": "MyBudget Mobile UI Polish",
-  "whatsNew": "Mobile touch refinement: prevent accidental double-tap zoom while preserving pinch zoom; chart details toggle reliably with a tap and include a clear close control."
+  "whatsNew": "Mobile polish: smaller chart tooltip close button and improved wrapping for Annual Dashboard bill descriptions."
 }
