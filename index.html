@@ -346,7 +346,7 @@ body.storage-startup-blocked .app{pointer-events:none;user-select:none}
 @media(max-width:520px){.saveStatusPill{font-size:10px;padding:5px 7px}.saveStatusDetails .sectionhead{align-items:flex-start;flex-direction:column;gap:5px}}
 
 
-/* v4.12.82 mobile-only UI refinement; desktop remains unchanged */
+/* v4.12.84 mobile-only regression fixes; desktop remains unchanged */
 .billViewToggle{display:none}
 @media(max-width:700px){
   html,body{touch-action:pan-x pan-y;}
@@ -427,7 +427,47 @@ body.storage-startup-blocked .app{pointer-events:none;user-select:none}
 }
 </style>
 <style>
-@media(max-width:700px){.mobileMonthSelector{position:relative;flex-shrink:0;margin-left:8px;z-index:8}.mobileMonthSelector .monthSelectBtn{font-size:11px;padding:6px 8px;white-space:nowrap}.monthSelectPanel{position:absolute;right:0;top:calc(100% + 5px);width:min(210px,70vw);max-height:260px;overflow:auto;background:var(--surface,#fff);border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.16);padding:8px;z-index:20}.monthSelectPanel label{display:flex;align-items:center;gap:7px;padding:6px 3px;font-size:13px}.monthSelectActions{display:flex;justify-content:space-between;position:sticky;top:0;background:var(--surface,#fff);padding:4px 0 7px}.monthSelectActions button{border:0;background:none;color:var(--accent,#52765f);font-size:12px;font-weight:600}.chartWrap:has(#incomeOutChart),.annualChartWrap:has(#annualQuarterChart),.annualChartWrap:has(#annualMonthlyChart){overflow-x:auto;overscroll-behavior-x:contain}.chartWrap:has(#incomeOutChart) canvas,.annualChartWrap:has(#annualQuarterChart) canvas,.annualChartWrap:has(#annualMonthlyChart) canvas{display:block;max-width:none}.chartWrap:has(#debtChart){max-height:360px;overflow-y:auto;overscroll-behavior:contain}.chartWrap:has(#debtChart) canvas{height:auto!important}.chartWrap:has(#incomeOutChart) canvas{touch-action:pan-x pan-y}.annualChartWrap:has(#annualQuarterChart) canvas,.annualChartWrap:has(#annualMonthlyChart) canvas{touch-action:pan-x pan-y}}
+@media(max-width:700px){
+  .sectionhead:has(.mobileMonthSelector){flex-wrap:nowrap;align-items:flex-start;gap:8px}
+  .sectionhead:has(.mobileMonthSelector)>div{flex:1 1 auto;min-width:0}
+  .mobileMonthSelector{position:relative;flex:0 0 auto;margin-left:auto;z-index:12}
+  .mobileMonthSelector .monthSelectBtn{font-size:11px;padding:7px 9px;min-height:40px;white-space:nowrap}
+  .monthSelectPanel{position:absolute;right:0;top:calc(100% + 5px);width:min(240px,78vw);max-height:min(340px,55vh);overflow:auto;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.2);padding:8px;z-index:30}
+  .monthSelectPanel label{display:flex;align-items:center;gap:8px;padding:7px 4px;font-size:13px;min-height:36px}
+  .monthSelectPanel label input{width:18px;height:18px;flex:0 0 18px}
+  .monthSelectActions{display:flex;justify-content:space-between;position:sticky;top:0;background:var(--panel);padding:4px 0 7px;z-index:1}
+  .monthSelectActions button{border:0;background:none;color:var(--accent);font-size:12px;font-weight:700;padding:7px 9px;min-height:36px}
+  .tablewrap:has(#forecastTable),.tablewrap:has(#annualQuarterTable),.tablewrap:has(#annualMonthTable){overflow-x:auto;overflow-y:hidden;max-width:100%;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  .tablewrap:has(#forecastTable) .table{min-width:1050px}
+  .tablewrap:has(#annualQuarterTable) .table{min-width:620px}
+  .tablewrap:has(#annualMonthTable) .table{min-width:680px}
+  .chartWrap:has(#debtChart){max-height:360px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+  .chartWrap:has(#debtChart) canvas{height:auto!important;min-height:0!important;max-width:100%}
+  .chartWrap:has(#incomeOutChart) canvas,.annualChartWrap:has(#annualQuarterChart) canvas,.annualChartWrap:has(#annualMonthlyChart) canvas{touch-action:pan-x pan-y}
+  .billCalendar .calendarHead{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));}
+  .billCalendar .calendarHead div{padding:4px 1px;text-align:center;font-size:9px}
+  .billCalendar .calendarGrid{grid-template-columns:repeat(7,minmax(0,1fr))}
+  .billCalendar .day{min-height:76px;padding:4px 3px;overflow:hidden}
+  .billCalendar .daynum{font-size:11px}
+  .billCalendar .billEvent{font-size:9px;line-height:1.2;padding:3px;white-space:normal;display:block;max-height:32px;overflow:hidden}
+  .billCalendar .sectionhead:has(.toolbar){align-items:flex-start}
+  #bills .card>.sectionhead:first-child{display:flex;flex-direction:column;align-items:stretch;gap:8px}
+  #bills .card>.sectionhead:first-child .toolbar{display:grid;grid-template-columns:minmax(0,1fr) repeat(3,auto);gap:5px;width:100%}
+  #calendarFilter{min-width:0;width:100%;font-size:12px;padding:8px 5px}
+  #bills .card>.sectionhead:first-child .toolbar button{min-height:40px;padding:6px 9px}
+  #calendar[hidden],#billMonthList[hidden]{display:none!important}
+  .billViewToggle{margin:0 0 10px;display:flex}
+  .billViewToggle button{flex:1;min-height:40px}
+  .billMonthList{display:grid;gap:7px}
+  .billMonthList .listrow{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px;align-items:flex-start}
+  .billMonthList .billMonthDay{flex:0 0 42px;font-weight:750;color:var(--muted)}
+  .billMonthList .billMonthItems{flex:1;min-width:0;display:grid;gap:6px}
+  .billMonthList .billMonthItem{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:8px;border-radius:8px;background:var(--surface-2);font-size:12px}
+  .mobileNav button{min-width:0;min-height:52px;padding:5px 2px;justify-content:center;touch-action:manipulation}
+  #mobileMoreBtn{position:relative;z-index:27;padding-inline:5px;min-width:54px}
+  #mobileMoreBtn .navIcon{font-size:22px;line-height:24px;letter-spacing:1px}
+  .mobileMorePanel button{min-height:44px;touch-action:manipulation}
+}
 </style></head>
 <body>
 <div class="app">

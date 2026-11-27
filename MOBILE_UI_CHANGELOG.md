@@ -15,3 +15,12 @@
 - Month selectors filter the chart data; Clear and All controls included.
 - Added mobile horizontal overflow support for chart areas and vertical scrolling for Debt Accounts chart.
 - Preserved desktop behavior and financial calculations.
+
+
+## v4.12.84 Mobile regression fixes
+- Month selector options remain fixed to all 12 months while chart data filters, allowing multiple selections without options disappearing.
+- Month selector stays open after checkbox changes and is aligned to the card header's right edge.
+- Fixed mobile More-menu outside-click handling when tapping the icon/text inside the button; enlarged touch targets.
+- Restored visible weekday headers and tightened mobile calendar navigation layout.
+- Enabled horizontal scrolling for Cash-flow Forecast, Annual Quarterly Cash Flow, and Monthly Annual Summary tables; corrected Debt Accounts chart vertical scroll.
+- Improved mobile card/header wrapping and table scrolling. No financial calculations or data structures changed.
